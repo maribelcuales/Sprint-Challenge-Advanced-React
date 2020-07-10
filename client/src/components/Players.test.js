@@ -24,3 +24,13 @@ test("toggle on is working", () => {
 });
 
 
+test("toggle off is working", () => {
+  const { getByTestId } = render(<Navbar />);
+
+  const toggleButton = getByTestId(/toggle-mode/i); 
+
+  fireEvent.click(toggleButton);
+  fireEvent.click(toggleButton);
+
+  expect(toggleButton).toHaveClass("toggled");
+});
