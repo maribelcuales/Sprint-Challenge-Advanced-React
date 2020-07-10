@@ -1,9 +1,10 @@
 import React from 'react';
+import NavBar from './Navbar'; 
 
 const Players = props => {
   return (
     <div>
-      <h1>Let's Play!</h1>
+      <NavBar /> 
       <div key={props.players.id} className="player">
         {props.players.map(player => (
           <div> 
