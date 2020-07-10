@@ -11,3 +11,16 @@ test("The Players header is visible", () => {
   expect(getByText(/the players/i)).toBeVisible();  
 }); 
 
+test("toggle on is working", () => {
+  const { getByTestId } = render(<Navbar />);
+
+  const toggleModeOn = getByTestId(/toggle-mode/i);
+
+  fireEvent.click(toggleModeOn);
+
+  const toggleOn = getByTestId(/toggle-mode/i);
+  
+  expect(toggleOn).toBeEnabled();
+});
+
+
