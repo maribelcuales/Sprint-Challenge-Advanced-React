@@ -5,7 +5,7 @@ const Players = props => {
   return (
     <div>
       <NavBar /> 
-      <div key={props.players.id} className="player">
+      <div key="player" className="player">
         {props.players.map(player => (
           <div className="player-details"> 
             <h3>Name: {player.name}</h3>

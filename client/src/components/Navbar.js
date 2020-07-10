@@ -15,6 +15,7 @@ const Navbar = () => {
       <h1>The Players</h1>
       <div className="dark-mode__toggle">
         <div
+          data-testid="toggle-mode"
           onClick={toggleMode}
           className={darkMode ? 'toggle toggled' : 'toggle'}
         />
