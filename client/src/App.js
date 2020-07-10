@@ -1,6 +1,7 @@
 import React from 'react';
-
+import axios from 'axios'; 
 import './App.css';
+import Players from './components/Players';
 
 class App extends React.Component{
   constructor() {
@@ -10,11 +11,24 @@ class App extends React.Component{
     };
   }
 
+  componentDidMount() {
+    axios.get("http://localhost:5000/api/players")
+    .then(response => {
+      console.log(response);
+      this.setState({
+        players: response.data
+      })
+    .catch(error => {
+      console.log("error fetching data", error)
+      });
+    });
+  }
+
+
   render() {
     return (
       <div className="App">
-        <h1>Let's Play!</h1>
-        <Players /> 
+        <Players players={this.state.players}/> 
       </div>
     );
   }
