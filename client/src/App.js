@@ -18,12 +18,8 @@ class App extends React.Component{
       this.setState({
         players: response.data
       })
-    .catch(error => {
-      console.log("error fetching data", error)
-      });
     });
   }
-
 
   render() {
     return (
