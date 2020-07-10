@@ -1,14 +1,23 @@
 import React from 'react';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
+class App extends React.Component{
+  constructor() {
+    super();
+    this.state = {
+      players: []
+    };
+  }
+
+  render() {
+    return (
+      <div className="App">
         <h1>Let's Play!</h1>
-      </header>
-    </div>
-  );
+        <Players /> 
+      </div>
+    );
+  }
 }
 
 export default App;
